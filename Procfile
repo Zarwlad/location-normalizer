@@ -1,0 +1,1 @@
+web: java -jar target/distrib-location-normalizer-0.0.1.jar -Dserver.port=$PORT
