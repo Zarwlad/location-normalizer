@@ -16,3 +16,6 @@ dadata:
     cleaner:
       address:
         url: ${DADATA_CLEANER_URL}
+
+server:
+  port: ${PORT:8080}
