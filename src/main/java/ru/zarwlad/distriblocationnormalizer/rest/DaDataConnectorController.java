@@ -1,5 +1,6 @@
 package ru.zarwlad.distriblocationnormalizer.rest;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,12 +11,14 @@ import ru.zarwlad.distriblocationnormalizer.connector.DaDataConnector;
 
 @RestController
 @RequestMapping("/da-data-connector")
+@Slf4j
 public class DaDataConnectorController {
     @Autowired
     private DaDataConnector daDataConnector;
 
     @PostMapping("/proccess-locations")
     public ResponseEntity<String> processLocation(){
+        log.info("Request received");
         daDataConnector.processLocations();
         return new ResponseEntity<>("SUCCESS", HttpStatus.OK);
     }
