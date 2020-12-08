@@ -8,4 +8,6 @@ import java.util.UUID;
 
 public interface DaDataResponseRepository extends JpaRepository<DaDataResponse, UUID> {
     Optional<DaDataResponse> findByFiasId(String fiasId);
+
+    Optional<DaDataResponse> findByFiasIdAndGeoLatAndGeoLon(String fiasId, String geoLat, String geoLon);
 }

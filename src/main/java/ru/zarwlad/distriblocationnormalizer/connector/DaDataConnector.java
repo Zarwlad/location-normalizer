@@ -69,11 +69,7 @@ public class DaDataConnector {
 
     private List<ShortDistributionLocation> getLocationsForProcessing(){
         return shortDistributionLocationService
-                .findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull()
-                .stream()
-                .filter(x -> !x.getAddress().isEmpty())
-                .filter(x -> !x.getAddress().trim().equals("Адрес не может быть идентифицирован в БД ФИАС".trim()))
-                .collect(Collectors.toList());
+                .findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull();
     }
 
     public List<DaDataResponseDto> sendRequestToDaDataAboutLocation(ShortDistributionLocation shortDistributionLocation) {
@@ -93,9 +89,10 @@ public class DaDataConnector {
 
             Response response = okHttpClient.newCall(request).execute();
             ResponseBody responseBody = response.body();
+            String bodyAsString = responseBody.string();
 
-            log.info(responseBody.string());
-            return objectMapper.readValue(responseBody.string(), new TypeReference<List<DaDataResponseDto>>(){});
+            log.info(bodyAsString);
+            return objectMapper.readValue(bodyAsString, new TypeReference<List<DaDataResponseDto>>(){});
         } catch (JsonProcessingException e) {
             log.error(e.getMessage());
             return new ArrayList<>();
@@ -109,7 +106,7 @@ public class DaDataConnector {
         List<DaDataResponseDto> dataResponseDtos = sendRequestToDaDataAboutLocation(shortDistributionLocation);
         List<DaDataResponse> responses = dataResponseDtos.stream()
                 .filter(x -> !x.getResult().isEmpty())
-                .map(x -> daDataResponseService.findOrCreateByFiasId(daDataResponseMapper.convertToEntity(x)))
+                .map(x -> daDataResponseService.findOrCreateByFiasIdAndGeoLatAndGeoLon(daDataResponseMapper.convertToEntity(x)))
                 .collect(Collectors.toList());
 
         responses.forEach(x -> {

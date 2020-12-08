@@ -32,4 +32,23 @@ public class DaDataResponseService {
         }
         return dbResponse;
     }
+
+    public DaDataResponse findByFiasIdAndGeoLatAndGeoLon(String fiasId, String geoLat, String geoLon){
+        return daDataResponseRepository.findByFiasIdAndGeoLatAndGeoLon(fiasId, geoLat, geoLon).orElse(null);
+    }
+
+    public DaDataResponse findOrCreateByFiasIdAndGeoLatAndGeoLon(DaDataResponse daDataResponse){
+        DaDataResponse dbRes = findByFiasIdAndGeoLatAndGeoLon(
+                daDataResponse.getFiasId(),
+                daDataResponse.getGeoLat(),
+                daDataResponse.geoLon);
+        if (dbRes == null) {
+            daDataResponseRepository.save(daDataResponse);
+            dbRes = findByFiasIdAndGeoLatAndGeoLon(
+                    daDataResponse.getFiasId(),
+                    daDataResponse.getGeoLat(),
+                    daDataResponse.geoLon);
+        }
+        return dbRes;
+    }
 }

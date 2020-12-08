@@ -7,5 +7,5 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ShortDistributionLocationRepository extends JpaRepository<ShortDistributionLocation, UUID> {
-    List<ShortDistributionLocation> findTop100ByDaDataRequestSendIsFalseAndAddressIsNotNull();
+    List<ShortDistributionLocation> findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull();
 }

@@ -29,6 +29,6 @@ public class ShortDistributionLocationService {
     }
 
     public List<ShortDistributionLocation> findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull(){
-        return shortDistributionLocationRepository.findTop100ByDaDataRequestSendIsFalseAndAddressIsNotNull();
+        return shortDistributionLocationRepository.findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull();
     }
 }
