@@ -31,4 +31,12 @@ public class ShortDistributionLocationService {
     public List<ShortDistributionLocation> findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull(){
         return shortDistributionLocationRepository.findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull();
     }
+
+    public List<ShortDistributionLocation> findTop1ByDaDataRequestSendIsFalseAndAddressIsNotNull(){
+        return shortDistributionLocationRepository.findTop1ByDaDataRequestSendIsFalseAndAddressIsNotNull();
+    }
+
+    public List<ShortDistributionLocation> findByAddressList (List<String> address){
+        return shortDistributionLocationRepository.findByAddressIn(address);
+    }
 }

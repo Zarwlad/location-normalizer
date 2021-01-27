@@ -6,14 +6,14 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "short_distribution_location")
+@Table(name = "short_distribution_location", schema = "analytics")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(of = "id")
-public class ShortDistributionLocation {
+public class TrueShortDistributionLocation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -22,13 +22,4 @@ public class ShortDistributionLocation {
 
     @Column(name = "counterparty_name")
     private String counterpartyName;
-
-    @Column(name = "analytics_id")
-    private UUID analyticsId;
-
-    @Column(name = "dadata_request_send")
-    private boolean daDataRequestSend;
-
-    @Column(name = "is_fias_defect")
-    private boolean fiasDefect;
 }

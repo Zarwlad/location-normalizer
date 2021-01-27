@@ -6,7 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import ru.zarwlad.distriblocationnormalizer.connector.DaDataConnector;
 
 @RestController
@@ -21,5 +23,9 @@ public class DaDataConnectorController {
         log.info("Request received");
         daDataConnector.processLocations();
         return new ResponseEntity<>("SUCCESS", HttpStatus.OK);
+    }
+    @PostMapping("/proccess-locations-by-address")
+    public void rerun(@RequestParam("file") MultipartFile multipartFile){
+        daDataConnector.addressesFromCsv(multipartFile);
     }
 }

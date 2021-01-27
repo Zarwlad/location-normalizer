@@ -8,4 +8,6 @@ import java.util.UUID;
 
 public interface ShortDistributionLocationRepository extends JpaRepository<ShortDistributionLocation, UUID> {
     List<ShortDistributionLocation> findTop500ByDaDataRequestSendIsFalseAndAddressIsNotNull();
+    List<ShortDistributionLocation> findTop1ByDaDataRequestSendIsFalseAndAddressIsNotNull();
+    List<ShortDistributionLocation> findByAddressIn(List<String> address);
 }

@@ -19,242 +19,248 @@ public class DaDataResponse {
     private UUID id;
 
     @Column(name = "source")
-    public String source;
+    private String source;
 
     @Column(name = "result")
-    public String result;
+    private String result;
 
     @Column(name = "postal_code")
-    public String postalCode;
+    private String postalCode;
 
     @Column(name = "country")
-    public String country;
+    private String country;
 
     @Column(name = "country_iso_code")
-    public String countryIsoCode;
+    private String countryIsoCode;
 
     @Column(name = "federal_district")
-    public String federalDistrict;
+    private String federalDistrict;
 
     @Column(name = "region_fias_id")
-    public String regionFiasId;
+    private String regionFiasId;
 
     @Column(name = "region_kladr_id")
-    public String regionKladrId;
+    private String regionKladrId;
 
     @Column(name = "region_iso_code")
-    public String regionIsoCode;
+    private String regionIsoCode;
 
     @Column(name = "region_with_type")
-    public String regionWithType;
+    private String regionWithType;
 
     @Column(name = "region_type")
-    public String regionType;
+    private String regionType;
 
     @Column(name = "region_type_full")
-    public String regionTypeFull;
+    private String regionTypeFull;
 
     @Column(name = "region")
-    public String region;
+    private String region;
 
     @Column(name = "area_fias_id")
-    public String areaFiasId;
+    private String areaFiasId;
 
     @Column(name = "area_kladr_id")
-    public String areaKladrId;
+    private String areaKladrId;
 
     @Column(name = "area_with_type")
-    public String areaWithType;
+    private String areaWithType;
 
     @Column(name = "area_type")
-    public String areaType;
+    private String areaType;
 
     @Column(name = "area_type_full")
-    public String areaTypeFull;
+    private String areaTypeFull;
 
     @Column(name = "area")
-    public String area;
+    private String area;
 
     @Column(name = "city_fias_id")
-    public String cityFiasId;
+    private String cityFiasId;
 
     @Column(name = "city_kladr_id")
-    public String cityKladrId;
+    private String cityKladrId;
 
     @Column(name = "city_with_type")
-    public String cityWithType;
+    private String cityWithType;
 
     @Column(name = "city_type")
-    public String cityType;
+    private String cityType;
 
     @Column(name = "city_type_full")
-    public String cityTypeFull;
+    private String cityTypeFull;
 
     @Column(name = "city")
-    public String city;
+    private String city;
 
     @Column(name = "city_area")
-    public String cityArea;
+    private String cityArea;
 
     @Column(name = "city_district_fias_id")
-    public String cityDistrictFiasId;
+    private String cityDistrictFiasId;
 
     @Column(name = "city_district_kladr_id")
-    public String cityDistrictKladrId;
+    private String cityDistrictKladrId;
 
     @Column(name = "city_district_with_type")
-    public String cityDistrictWithType;
+    private String cityDistrictWithType;
 
     @Column(name = "city_district_type")
-    public String cityDistrictType;
+    private String cityDistrictType;
 
     @Column(name = "city_district_type_full")
-    public String cityDistrictTypeFull;
+    private String cityDistrictTypeFull;
 
     @Column(name = "city_district")
-    public String cityDistrict;
+    private String cityDistrict;
 
     @Column(name = "settlement_fias_id")
-    public String settlementFiasId;
+    private String settlementFiasId;
 
     @Column(name = "settlement_kladr_id")
-    public String settlementKladrId;
+    private String settlementKladrId;
 
     @Column(name = "settlement_with_type")
-    public String settlementWithType;
+    private String settlementWithType;
 
     @Column(name = "settlement_type")
-    public String settlementType;
+    private String settlementType;
 
     @Column(name = "settlement_type_full")
-    public String settlementTypeFull;
+    private String settlementTypeFull;
 
     @Column(name = "settlement")
-    public String settlement;
+    private String settlement;
 
     @Column(name = "street_fias_id")
-    public String streetFiasId;
+    private String streetFiasId;
 
     @Column(name = "street_kladr_id")
-    public String streetKladrId;
+    private String streetKladrId;
 
     @Column(name = "street_with_type")
-    public String streetWithType;
+    private String streetWithType;
 
     @Column(name = "street_type")
-    public String streetType;
+    private String streetType;
 
     @Column(name = "street_type_full")
-    public String streetTypeFull;
+    private String streetTypeFull;
 
     @Column(name = "street")
-    public String street;
+    private String street;
 
     @Column(name = "house_fias_id")
-    public String houseFiasId;
+    private String houseFiasId;
 
     @Column(name = "house_kladr_id")
-    public String houseKladrId;
+    private String houseKladrId;
 
     @Column(name = "house_type")
-    public String houseType;
+    private String houseType;
 
     @Column(name = "house_type_full")
-    public String houseTypeFull;
+    private String houseTypeFull;
 
     @Column(name = "house")
-    public String house;
+    private String house;
 
     @Column(name = "block_type")
-    public String blockType;
+    private String blockType;
 
     @Column(name = "block_type_full")
-    public String blockTypeFull;
+    private String blockTypeFull;
 
     @Column(name = "block")
-    public String block;
+    private String block;
 
     @Column(name = "flat_type")
-    public String flatType;
+    private String flatType;
 
     @Column(name = "flat_type_full")
-    public String flatTypeFull;
+    private String flatTypeFull;
 
     @Column(name = "flat")
-    public String flat;
+    private String flat;
 
     @Column(name = "flat_area")
-    public String flatArea;
+    private String flatArea;
 
     @Column(name = "square_meter_price")
-    public String squareMeterPrice;
+    private String squareMeterPrice;
 
     @Column(name = "flat_price")
-    public String flatPrice;
+    private String flatPrice;
 
     @Column(name = "postal_box")
-    public String postalBox;
+    private String postalBox;
 
     @Column(name = "fias_id")
-    public String fiasId;
+    private String fiasId;
 
     @Column(name = "fias_code")
-    public String fiasCode;
+    private String fiasCode;
 
     @Column(name = "fias_level")
-    public String fiasLevel;
+    private String fiasLevel;
 
     @Column(name = "fias_actuality_state")
-    public String fiasActualityState;
+    private String fiasActualityState;
 
     @Column(name = "kladr_id")
-    public String kladrId;
+    private String kladrId;
 
     @Column(name = "capital_marker")
-    public String capitalMarker;
+    private String capitalMarker;
 
     @Column(name = "okato")
-    public String okato;
+    private String okato;
 
     @Column(name = "oktmo")
-    public String oktmo;
+    private String oktmo;
 
     @Column(name = "tax_office")
-    public String taxOffice;
+    private String taxOffice;
 
     @Column(name = "tax_office_legal")
-    public String taxOfficeLegal;
+    private String taxOfficeLegal;
 
     @Column(name = "timezone")
-    public String timezone;
+    private String timezone;
 
     @Column(name = "geo_lat")
-    public String geoLat;
+    private String geoLat;
 
     @Column(name = "geo_lon")
-    public String geoLon;
+    private String geoLon;
 
     @Column(name = "beltway_hit")
-    public String beltwayHit;
+    private String beltwayHit;
 
     @Column(name = "beltway_distance")
-    public String beltwayDistance;
+    private String beltwayDistance;
 
     @Column(name = "qc_geo")
-    public Integer qcGeo;
+    private Integer qcGeo;
 
     @Column(name = "qc_complete")
-    public Integer qcComplete;
+    private Integer qcComplete;
 
     @Column(name = "qc_house")
-    public Integer qcHouse;
+    private Integer qcHouse;
 
     @Column(name = "qc")
-    public Integer qc;
+    private Integer qc;
 
     @Column(name = "metro")
-    public String metro;
+    private String metro;
 
     @Column(name = "unparsed_parts")
-    public String unparsedPart;
+    private String unparsedPart;
+
+    @Column(name = "value")
+    private String value;
+
+    @Column(name = "unrestricted_value")
+    private String unrestrictedValue;
 }

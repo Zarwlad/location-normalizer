@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.zarwlad.distriblocationnormalizer.entity.DaDataResponse;
 import ru.zarwlad.distriblocationnormalizer.repository.DaDataResponseRepository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -18,6 +19,10 @@ public class DaDataResponseService {
 
     public DaDataResponse findByFiasId(String fiasId){
         return daDataResponseRepository.findByFiasId(fiasId).orElse(null);
+    }
+
+    public List<DaDataResponse> findAllByFiasId(String fiasId){
+        return daDataResponseRepository.findAllByFiasId(fiasId);
     }
 
     public void create(DaDataResponse daDataResponse){
@@ -41,13 +46,13 @@ public class DaDataResponseService {
         DaDataResponse dbRes = findByFiasIdAndGeoLatAndGeoLon(
                 daDataResponse.getFiasId(),
                 daDataResponse.getGeoLat(),
-                daDataResponse.geoLon);
+                daDataResponse.getGeoLon());
         if (dbRes == null) {
             daDataResponseRepository.save(daDataResponse);
             dbRes = findByFiasIdAndGeoLatAndGeoLon(
                     daDataResponse.getFiasId(),
                     daDataResponse.getGeoLat(),
-                    daDataResponse.geoLon);
+                    daDataResponse.getGeoLon());
         }
         return dbRes;
     }
