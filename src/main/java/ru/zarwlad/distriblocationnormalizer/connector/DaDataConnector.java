@@ -202,7 +202,7 @@ public class DaDataConnector {
         }
     }
 
-    //@Scheduled(fixedDelay = 1)
+    @Scheduled(fixedDelay = 1)
     @Transactional
     public void enrichLocationsByDaData(){
         List<EnrichedLocation> enrichedLocations = enrichedLocationService.findTop1ByDaDataResponseIsNullAndAndDaDataUnmappedFalse();
