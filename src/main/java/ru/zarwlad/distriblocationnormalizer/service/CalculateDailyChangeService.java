@@ -20,65 +20,9 @@ public class CalculateDailyChangeService {
     private final TrueShortDistributionLocationRepository trueShortDistributionLocationRepository;
     private final TurnoverTaskRepository turnoverTaskRepository;
 
-    @Scheduled(fixedRate = 1)
-    public void strt(){
-      calculateDailyChange(0);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void start(){
-      calculateDailyChange(1);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void s(){
-        calculateDailyChange(2);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void se(){
-        calculateDailyChange(3);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void sc(){
-        calculateDailyChange(4);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void sdv(){
-        calculateDailyChange(5);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void sae(){
-        calculateDailyChange(6);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void sac(){
-        calculateDailyChange(7);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void saac(){
-        calculateDailyChange(8);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void sadc(){
-        calculateDailyChange(9);
-    }
-
-    @Scheduled(fixedRate = 1)
-    public void scac(){
-        calculateDailyChange(10);
-    }
-
 
     @Transactional
-    //@Scheduled(fixedRate = 1)
-    //@Async
+    @Scheduled(fixedRate = 1)
     public void calculateDailyChange(int i){
         TurnoverTask turnoverTask = turnoverTaskRepository.findFirstByProcessedFalseAndNumOrderByDayAsc(i).orElse(null);
         log.info("Processing turnoverTask: {}", turnoverTask.toString());
